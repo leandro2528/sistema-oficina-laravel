@@ -43,7 +43,7 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Menu Navegação
                             </a>
@@ -90,7 +90,7 @@
                             <div class="collapse" id="collapseCadastros" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('clientes-index') }}">Clientes</a>
-                                    <a class="nav-link" href="">Fornecedores</a>
+                                    <a class="nav-link" href="{{ route('fornecedors-index') }}">Fornecedores</a>
                                     <a class="nav-link" href="">Produtos</a>
                                     <a class="nav-link" href="">Serviços</a>
                                     <a class="nav-link" href="">Usuários</a>

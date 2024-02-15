@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 
 use App\Http\Controllers\Dashboardcontroller;
+use App\Http\Controllers\Fornecedorcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,13 @@ Route::prefix('/clientes')->group(function() {
     Route::get('/{id}/edit', [ClienteController::class, 'edit'])->where('id', '[0-9]+')->name('clientes-edit');
     Route::put('/{id}', [ClienteController::class, 'update'])->where('id', '[0-9]+')->name('clientes-update');
     Route::delete('/{id}', [ClienteController::class, 'destroy'])->where('id', '[0-9]+')->name('clientes-destroy');
+});
+
+Route::prefix('/fornecedors')->group(function() {
+    Route::get('/', [FornecedorController::class, 'index'])->name('fornecedors-index');
+    Route::get('/create', [FornecedorController::class, 'create'])->name('fornecedors-create');
+    Route::post('/', [FornecedorController::class, 'store'])->name('fornecedors-store');
+    Route::get('/{id}/edit', [FornecedorController::class, 'edit'])->where('id', '[0-9]+')->name('fornecedors-edit');
+    Route::put('{id}', [FornecedorController::class, 'update'])->where('id', '[0-9]+')->name('fornecedors-update');
+    Route::delete('/{id}', [FornecedorController::class, 'destroy'])->where('id', '[0-9]+')->name('fornecedors-destroy');
 });
