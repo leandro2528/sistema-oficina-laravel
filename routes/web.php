@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ServicoController;
+use App\Http\Controllers\VeiculoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,8 @@ Route::prefix('/servicos')->group(function() {
     Route::get('/{id}/edit', [ServicoController::class, 'edit'])->where('id', '[0-9]+')->name('servicos-edit');
     Route::put('/{id}', [ServicoController::class, 'update'])->where('id', '[0-9]+')->name('servicos-update');
     Route::delete('/{id}', [ServicoController::class, 'destroy'])->where('id', '[0-9]+')->name('servicos-destroy');
+});
+
+Route::prefix('/veiculos')->group(function() {
+    Route::get('/', [VeiculoController::class, 'index'])->name('veiculos-index');
 });

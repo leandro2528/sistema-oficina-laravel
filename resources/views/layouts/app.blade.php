@@ -94,7 +94,7 @@
                                     <a class="nav-link" href="{{ route('produtos-index') }}">Produtos</a>
                                     <a class="nav-link" href="{{ route('servicos-index') }}">Serviços</a>
                                     <a class="nav-link" href="">Usuários</a>
-                                    <a class="nav-link" href="">Veículos</a>
+                                    <a class="nav-link" href="{{ route('veiculos-index') }}">Veículos</a>
                                     <a class="nav-link" href="">Funcionários</a>
                                     <a class="nav-link" href="">Oficina</a>
                                 </nav>
