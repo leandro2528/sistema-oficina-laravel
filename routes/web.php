@@ -6,6 +6,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ServicoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +48,13 @@ Route::prefix('/produtos')->group(function() {
     Route::get('/{id}/edit', [ProdutoController::class, 'edit'])->where('id', '[0-9]+')->name('produtos-edit');
     Route::put('/{id}', [ProdutoController::class, 'update'])->where('id', '[0-9]+')->name('produtos-update');
     Route::delete('/{id}', [ProdutoController::class, 'destroy'])->where('id', '[0-9]+')->name('produtos-destroy');
+});
+
+Route::prefix('/servicos')->group(function() {
+    Route::get('/', [ServicoController::class, 'index'])->name('servicos-index');
+    Route::get('/create', [ServicoController::class, 'create'])->name('servicos-create');
+    Route::post('/', [ServicoController::class, 'store'])->name('servicos-store');
+    Route::get('/{id}/edit', [ServicoController::class, 'edit'])->where('id', '[0-9]+')->name('servicos-edit');
+    Route::put('/{id}', [ServicoController::class, 'update'])->where('id', '[0-9]+')->name('servicos-update');
+    Route::delete('/{id}', [ServicoController::class, 'destroy'])->where('id', '[0-9]+')->name('servicos-destroy');
 });
