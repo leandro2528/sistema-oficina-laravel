@@ -19,6 +19,20 @@ class ClienteController extends Controller
     }
 
     public function store(Request $request) {
+        $request->validate([
+            'cpf' => 'required',
+            'insc_estadual' => 'required',
+            'nome_razao_social' => 'required',
+            'nome_fantasia' => 'required',
+            'telefone' => 'required',
+            'cpf' => 'required',
+            'endereco' => 'required',
+            'bairro' => 'required',
+            'cidade' => 'required',
+            'uf' => 'required',
+            'ponto_referencia' => 'required'
+        ]);
+
         Cliente::create($request->all());
         return redirect()->route('clientes-index');
     }

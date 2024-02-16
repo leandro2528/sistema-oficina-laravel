@@ -62,4 +62,9 @@ Route::prefix('/servicos')->group(function() {
 
 Route::prefix('/veiculos')->group(function() {
     Route::get('/', [VeiculoController::class, 'index'])->name('veiculos-index');
+    Route::get('/create', [VeiculoController::class, 'create'])->name('veiculos-create');
+    Route::post('/', [VeiculoController::class, 'store'])->name('veiculos-store');
+    Route::get('/{id}/edit', [VeiculoController::class, 'edit'])->where('id', '[0-9]+')->name('veiculos-edit');
+    Route::put('{id}', [VeiculoController::class, 'update'])->where('id', '[0-9]+')->name('veiculos-update');
+    Route::delete('{id}', [VeiculoController::class, 'destroy'])->where('id', '[0-9]+')->name('veiculos-destroy');
 });
