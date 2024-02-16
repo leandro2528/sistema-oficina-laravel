@@ -8,6 +8,7 @@ use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\ServicoController;
 use App\Http\Controllers\VeiculoController;
+use App\Http\Controllers\FuncionarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,4 +68,13 @@ Route::prefix('/veiculos')->group(function() {
     Route::get('/{id}/edit', [VeiculoController::class, 'edit'])->where('id', '[0-9]+')->name('veiculos-edit');
     Route::put('{id}', [VeiculoController::class, 'update'])->where('id', '[0-9]+')->name('veiculos-update');
     Route::delete('{id}', [VeiculoController::class, 'destroy'])->where('id', '[0-9]+')->name('veiculos-destroy');
+});
+
+Route::prefix('/funcionarios')->group(function() {
+    Route::get('/', [FuncionarioController::class, 'index'])->name('funcionarios-index');
+    Route::get('/creat', [FuncionarioController::class, 'create'])->name('funcionarios-create');
+    Route::post('/', [FuncionarioController::class, 'store'])->name('funcionarios-store');
+    Route::get('{id}/edit', [FuncionarioController::class, 'edit'])->where('id', '[0-9]+')->name('funcionarios-edit');
+    Route::put('{id}', [FuncionarioController::class, 'update'])->where('id', '[0-9]+')->name('funcionarios-update');
+    Route::delete('/{id}', [FuncionarioController::class, 'destroy'])->where('id', '[0-9]+')->name('funcionarios-destroy');
 });
